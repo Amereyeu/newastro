@@ -1,19 +1,5 @@
 ---
-const navItems = [
-  {
-    path: "/",
-    label: "Home",
-  },
-  {
-    path: "/blog",
-    label: "Blog",
-  },
-  {
-    path: "/about",
-    label: "About",
-  },
-];
-
+import Nav from "../components/navigation.astro";
 
 import "../scss/App.scss";
 ---
@@ -27,18 +13,10 @@ import "../scss/App.scss";
     <title>Demo++</title>
   </head>
   <body>
-    <nav>
-      <ul>
-        {
-          navItems.map((item) => (
-            <li>
-              <a href={item.path}>{item.label}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
+    <Nav />
 
-    <slot />
+    <main>
+      <slot> Default Text</slot>
+    </main>
   </body>
 </html>

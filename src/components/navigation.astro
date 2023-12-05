@@ -1,0 +1,25 @@
+---
+import { Icon } from "astro-icon";
+import navItems from "../data/navData";
+---
+
+<nav aria-label="Primary" class="nav">
+  <div class="navbar">
+    <a href="/" class="logo" aria-label="Go home">
+      <Icon pack="mdi" name="account" width="40" />
+    </a>
+
+      <ul>
+        {
+          navItems.map((item) => (
+            <li>
+              <a href={item.path}>{item.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+   
+  </div>
+</nav>
+
+
