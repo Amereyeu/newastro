@@ -1,12 +1,41 @@
+---
+const navItems = [
+  {
+    path: "/",
+    label: "Home",
+  },
+  {
+    path: "/blog",
+    label: "Blog",
+  },
+  {
+    path: "/about",
+    label: "About",
+  },
+];
+---
+
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Demo++</title>
-	</head>
-	<body>
-    <slot/>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Demo++</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        {
+          navItems.map((item) => (
+            <li>
+              <a href={item.path}>{item.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <slot />
+  </body>
 </html>
