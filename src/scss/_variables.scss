@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@600&Raleway:wght@400;700&&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$small: 480px;
+$medium: 1024px;
+$large: 1200px;
+
+$primary: "Raleway", sans-serif;
+$headings: "Big Shoulders Text", sans-serif;
+$swiper: "Montserrat", sans-serif;
+
+@mixin break($breakpoint...) {
+  @if length($breakpoint) ==1 {
+    @media (min-width: nth($breakpoint, 1)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: nth($breakpoint, 1)) and (max-width: nth($breakpoint, 2)) {
+      @content;
+    }
+  }
+}
+

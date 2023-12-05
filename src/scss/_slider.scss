@@ -1,0 +1,256 @@
+a,
+a:hover {
+  text-decoration: none;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.wrapper {
+  background: #1f1f25;
+  overflow: hidden;
+  position: relative;
+}
+
+.news {
+  &-slider {
+    z-index: 2;
+    margin: 4rem auto;
+    position: relative;
+    overflow: hidden;
+
+    @include break($medium) {
+      width: 1000px;
+    }
+
+    @media screen and (max-width: 576px) {
+      margin-top: 45px;
+    }
+
+    &__wrp {
+      display: flex;
+      z-index: 2;
+      margin: 0 auto;
+
+      @include break($medium) {
+        width: 1000px;
+      }
+    }
+
+    &__item {
+      flex-shrink: 0;
+      margin: 0.5rem;
+      display: grid;
+      margin-right: 1.2rem;
+      width: 340px;
+
+      @include break($medium) {
+        width: 1000px;
+      }
+
+      &.swiper-slide {
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s;
+      }
+
+      &.swiper-slide-active,
+      &.swiper-slide-prev,
+      &.swiper-slide-next {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+
+    &__arrows {
+      @include break($medium) {
+        width: 139px;
+        height: 50px;
+        position: absolute;
+        bottom: 122px;
+        right: 88px;
+        z-index: 99;
+      }
+    }
+
+    &__arrow {
+      background: #fff;
+      border: none;
+      display: inline-flex;
+      width: 50px;
+      height: 50px;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 6px 26px 6px rgba(0, 0, 0, 0.25);
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      z-index: 12;
+      cursor: pointer;
+      outline: none !important;
+
+      &:focus {
+        outline: none !important;
+      }
+
+      .icon-font {
+        display: inline-flex;
+      }
+
+      &.news-slider-prev {
+        left: 15px;
+        transform: translateY(-50%);
+      }
+
+      &.news-slider-next {
+        right: 15px;
+        transform: translateY(-50%);
+      }
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+
+    &__pagination {
+      text-align: center;
+      margin-top: 16px;
+
+      @include break($medium) {
+        margin-top: 50px;
+      }
+
+      @include break($medium) {
+        position: absolute;
+        left: -80px;
+        rotate: 90deg;
+        bottom: 232px;
+        z-index: 22;
+      }
+
+      .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        background: #fff;
+        opacity: 1;
+        margin: 0 5px;
+        border-radius: 20px;
+        transition: opacity 0.5s, background-color 0.5s, width 0.5s;
+        transition-delay: 0.5s, 0.5s, 0s;
+      }
+
+      .swiper-pagination-bullet-active {
+        opacity: 1;
+        background: #ffffff;
+        width: 100px;
+        transition-delay: 0s;
+
+        @media screen and (max-width: 576px) {
+          width: 70px;
+        }
+      }
+    }
+  }
+
+  &__item {
+    color: #fff;
+    display: grid;
+    transition: all 0.3s;
+    align-content: space-between;
+    position: relative;
+
+    @include break($medium) {
+      height: 70vh;
+    }
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 1rem;
+
+    @include break($medium) {
+      position: absolute;
+      z-index: 11;
+      top: 100px;
+      right: 100px;
+      text-align: right;
+      cursor: initial;
+    }
+
+    a,
+    a:visited {
+      color: white;
+
+      &:hover {
+        color: #2196f3;
+        transition-delay: 0.1s;
+      }
+    }
+
+    small {
+      color: white;
+      padding-left: 5px;
+    }
+  }
+
+  &__title {
+    font-family: $swiper;
+    transition: opacity 0.3s;
+    font-size: 25px;
+    font-weight: 500;
+
+    @include break($medium) {
+      line-height: 64px;
+      font-size: 64px;
+      font-weight: 700;
+    }
+
+    a {
+      font-family: $swiper;
+    }
+  }
+
+  &__info {
+    font-family: $swiper !important;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 23px;
+  }
+
+  &__txt {
+    margin: 20px 0;
+    line-height: 1.6em;
+    font-size: 15px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+  }
+
+  &__img {
+    @include break($medium) {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    img {
+      height: auto;
+      width: 100%;
+
+      @include break($medium) {
+        height: auto;
+        width: 700px;
+        opacity: 0.6;
+        box-shadow: 10px 0 20px #fff;
+      }
+    }
+  }
+}
+
