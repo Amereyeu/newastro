@@ -9,17 +9,14 @@ import navItems from "../data/navData";
       <Icon pack="mdi" name="account" width="40" />
     </a>
 
-      <ul>
-        {
-          navItems.map((item) => (
-            <li>
-              <a href={item.path}>{item.label}</a>
-            </li>
-          ))
-        }
-      </ul>
-   
+    <ul>
+      {
+        navItems.map((item) => (
+          <li>
+            <a href={item.path}>{item.label}</a>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </nav>
-
-
