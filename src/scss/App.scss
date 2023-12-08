@@ -1,9 +1,9 @@
-@import "./variables";
-@import "./navigation";
-@import "./footer";
+@import "base/variables";
+@import "components/header";
+@import "components/navigation";
+@import "components/footer";
 @import "./page";
 @import "./post";
 @import "./slider";
 @import "./about";
-@import "components/header"
 
